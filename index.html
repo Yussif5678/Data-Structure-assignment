@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container animate-fade-in">
+        <header>
+            <h1 class="animate-glow">Student Grade System</h1>
+            <p>Parallel Arrays Tracker (Max 30 Students)</p>
+        </header>
+
+        <!-- Input Section -->
+        <div class="card animate-slide-up">
+            <h2>Add Student Record</h2>
+            <div class="form-group">
+                <input type="text" id="nameInput" placeholder="Student Name" />
+                <input type="number" id="markInput" min="0" max="100" step="0.1" placeholder="Mark (0-100)" />
+                <button onclick="addStudent()">Add Student</button>
+            </div>
+            <div class="actions-grid">
+                <button class="btn-secondary" onclick="loadSampleData()">Load Sample Data</button>
+                <button class="btn-secondary" onclick="sortStudents()">Sort High to Low</button>
+                <button class="btn-danger" onclick="clearAllData()">Clear All Data</button>
+            </div>
+        </div>
+
+        <!-- Array Visualization -->
+        <div class="card animate-slide-up">
+            <h2>Parallel Arrays View (names[] & marks[])</h2>
+            <div class="array-grid" id="arrayGrid">
+                <!-- Boxes injected here via JS -->
+            </div>
+        </div>
+
+        <!-- Statistics Dashboard -->
+        <div class="card animate-slide-up">
+            <h2>Class Statistics Dashboard</h2>
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card"><div class="title">Total Students</div><div class="value" id="statCount">0 / 30</div></div>
+                <div class="stat-card"><div class="title">Class Average</div><div class="value" id="statAvg">--</div></div>
+                <div class="stat-card"><div class="title">Highest Mark</div><div class="value" id="statHighest">--</div></div>
+                <div class="stat-card"><div class="title">Lowest Mark</div><div class="value" id="statLowest">--</div></div>
+                <div class="stat-card"><div class="title">Above Average</div><div class="value" id="statAbove">-- students</div></div>
+            </div>
+        </div>
+
+        <!-- Search & Output -->
+        <div class="card animate-slide-up">
+            <h2>Search Records</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div class="form-group">
+                    <input type="text" id="searchNameInput" placeholder="Enter name to search..." />
+                    <button class="btn-secondary" onclick="searchStudent()">Search Name</button>
+                </div>
+                <div class="output-box" id="outputBox">Results and search outputs will appear here...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
